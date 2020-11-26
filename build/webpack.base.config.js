@@ -4,29 +4,22 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, '../../src/home.tsx'),
+    main: path.resolve(__dirname, '../src/main.js'),
   },
   output: {
-    path: path.resolve(__dirname, '../../dist'),
+    path: path.resolve(__dirname, '../dist'),
     // publicPath: '/dist/',
     filename:'js/[name].js',
     chunkFilename:'js/[name].js'
   },
   resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
+    extensions: ['.js', '.ts'],
     alias: {
-      '@': path.resolve(__dirname, '../../src')
+      '@': path.resolve(__dirname, '../src')
     }
   },
   module: {
     rules: [
-      {
-        test: /\.tsx?$/i,
-        use: [{
-          loader: 'ts-loader'
-        }],
-        exclude: /node_modules/
-      },
       {
         test:/\.js$/,
         use:{
@@ -101,7 +94,7 @@ module.exports = {
   plugins: [
     // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../../k-server/view/index.html')
+      template: path.resolve(__dirname, '../server/views/index.html')
     })
   ]
 };

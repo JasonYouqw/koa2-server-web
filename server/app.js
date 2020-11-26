@@ -1,8 +1,8 @@
 const path = require('path');
-// const  webpack = require('webpack');
-// const { devMiddleware, hotMiddleware } = require('koa-webpack-middleware');
-// const webpackConfig = require('../build/webpack.dev.config');
-// const config = require('../config');
+const  webpack = require('webpack');
+const { devMiddleware, hotMiddleware } = require('koa-webpack-middleware');
+const webpackConfig = require('../build/webpack.dev.config');
+const config = require('../config');
 
 const koa = require('koa2');
 const koaEjs = require('koa-ejs');
@@ -39,18 +39,18 @@ app.use(Router.allowedMethods());
 
 const isDev = process.env.DEPLOY_ENV === 'development';
 
-// if (isDev) {
-//   const compiler = webpack(webpackConfig);
-//   app.use(devMiddleware(compiler, {
-//     noInfo: true,
-//     publicPath: webpackconfig.output.publicPath
-//   }));
+if (isDev) {
+  const compiler = webpack(webpackConfig);
+  app.use(devMiddleware(compiler, {
+    noInfo: true,
+    publicPath: webpackConfig.output.publicPath
+  }));
 
-//   // hot load
-//   app.use(hotMiddleware(compiler, {
-//     reload: true
-//   }));
-// }
+  // hot load
+  app.use(hotMiddleware(compiler, {
+    reload: true
+  }));
+}
 
 app.listen(
   8080,
