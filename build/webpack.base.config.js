@@ -1,7 +1,8 @@
 const path = require('path');
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const vueLoaderConfig = require('./vue-loader.conf');
+console.log(`webpack base :${path.resolve(__dirname, '../server/views/index.html')}`)
 module.exports = {
   entry: {
     main: path.resolve(__dirname, '../src/main.js'),
@@ -13,8 +14,9 @@ module.exports = {
     chunkFilename:'js/[name].js'
   },
   resolve: {
-    extensions: ['.js', '.ts'],
+    extensions: ['.js', '.ts', '.vue', '.json'],
     alias: {
+      'vue$': "vue/dist/vue.esm.js",
       '@': path.resolve(__dirname, '../src')
     }
   },
@@ -29,6 +31,13 @@ module.exports = {
           }
         },
         exclude:/node_modules/
+      },
+      {
+        test: /\.vue$/,
+        use: {
+          loader: 'vue-loader',
+          options: vueLoaderConfig
+        }
       },
       {
         test: /\.(scss)$/,
@@ -93,8 +102,8 @@ module.exports = {
   },
   plugins: [
     // new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../server/views/index.html')
-    })
+    // new HtmlWebpackPlugin({
+    //   template: path.resolve(__dirname, '../server/views/index.html')
+    // }),
   ]
 };
