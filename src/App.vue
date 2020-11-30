@@ -1,8 +1,4 @@
 <template>
-  <!-- <div id="app">
-    <div>server app page</div>
-    <router-view></router-view>
-  </div> -->
   <transition mode="out-in" enter-active-class="fadeIn" leave-active-class="fadeOut" appear>
     <div>
       <div @click="onPush">click1</div>

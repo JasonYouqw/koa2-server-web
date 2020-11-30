@@ -4,10 +4,8 @@ const proxy = require('../controller/proxy');
 const apiList = require('../controller/getApiList')();
 
 router.get(new RegExp('\/*'), async (ctx, next) => {
-  await ctx.render('index', {
-    title: 'koa2 web',
-    body: 'my koa2 server web'
-  });
+  console.log(`ctx.path:${ctx.path}`)
+  await ctx.render('index');
   await next();
 });
 
@@ -17,10 +15,10 @@ router.get('/health', (ctx, next) => {
   next();
 });
 
-// const { api, form, upload } = apiList;
-// router.get(api, proxy.proxyGet);
-// router.post(api, proxy.proxyPost);
-// router.post(form, proxy.proxyForm);
-// router.post(upload, proxy.proxyUpload);
+const { api, form, upload } = apiList;
+router.get(api, proxy.proxyGet);
+router.post(api, proxy.proxyPost);
+router.post(form, proxy.proxyForm);
+router.post(upload, proxy.proxyUpload);
 
 module.exports = router;

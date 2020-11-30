@@ -51,7 +51,7 @@ app.use(async (ctx, next) => {
   const start = new Date().getTime();
   await next();
   const ms = new Date().getTime() - start;
-  console.log(`use time: ${ms}`);
+  console.log(`middware use time: ${ms}ms`);
 });
 
 // router
@@ -59,7 +59,7 @@ app.use(Router.routes());
 app.use(Router.allowedMethods());
 
 
-const isDev = process.env.DEPLOY_ENV === 'development';
+const isDev = process.env.NODE_ENV === 'development';
 
 if (isDev) {
   const compiler = webpack(webpackConfig);
