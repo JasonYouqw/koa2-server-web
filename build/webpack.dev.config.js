@@ -23,10 +23,5 @@ module.exports = merge(webpackConfig, {
       filename: '[name].css',
       chunkFilename: '[id].css'
     }),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: path.resolve(__dirname, '../server/views/index.html'),
-      inject: true
-    }),
   ]
 });

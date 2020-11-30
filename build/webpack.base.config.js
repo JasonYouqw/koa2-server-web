@@ -1,8 +1,9 @@
 const path = require('path');
-// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const vueLoaderConfig = require('./vue-loader.conf');
 console.log(`webpack base :${path.resolve(__dirname, '../server/views/index.html')}`)
+console.log(`dist path:${path.resolve(__dirname, '../dist')}`)
 module.exports = {
   entry: {
     main: path.resolve(__dirname, '../src/main.js'),
@@ -101,9 +102,11 @@ module.exports = {
     ]
   },
   plugins: [
-    // new CleanWebpackPlugin(),
-    // new HtmlWebpackPlugin({
-    //   template: path.resolve(__dirname, '../server/views/index.html')
-    // }),
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: path.resolve(__dirname, '../server/views/index.html'),
+      inject: true
+    }),
   ]
 };

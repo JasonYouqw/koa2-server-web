@@ -12,14 +12,14 @@ module.exports = merge(webpackConfig, {
   mode: 'production',
   devtool: 'cheap-module-source-map',
   output: {
-    path: path.resolve(__dirname, '../../dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename:'js/[name].[hash:8].js',
     chunkFilename:'js/[name].[hash:8].js'
   },
   plugins: [
     // new CopyWebpackPlugin({
-    //   from: path.resolve(__dirname, '../../public'),
-    //   to: path.resolve(__dirname, '../../dist'),
+    //   from: path.resolve(__dirname, '../public'),
+    //   to: path.resolve(__dirname, '../dist'),
     // }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
