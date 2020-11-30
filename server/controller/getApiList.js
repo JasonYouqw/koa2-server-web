@@ -6,15 +6,15 @@ const compileReg = (str) => {
 }
 
 const getApiList = () => {
-  const apiList = compileReg(proxyApiMapper['api/claim'])
+  const apiList = compileReg('api/claim')
   console.log(apiList);
-  const formApiList = compileReg(proxyApiMapper['api/form']);
+  const formApiList = compileReg('api/form');
   console.log(formApiList);
-  const uploadApiList = compileReg(proxyApiMapper['api/upload']);
+  const uploadApiList = compileReg('api/upload');
   console.log(uploadApiList);
   return {
     api: apiList,
-    from: formApiList,
+    form: formApiList,
     upload: uploadApiList
   };
 };

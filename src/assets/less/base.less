@@ -1,19 +1,4 @@
 @charset "utf-8";
-
-$mainColor: #1890FF;
-$labelText: #000;
-$tableThText: #2c2c2c;
-$inputText: #595959;
-$inputBorder: #DEDEDE;
-$inputBackground: #FBFBFB;
-$inputDisabledBorder: #D0CFCF;
-$inputDisabledBackground: #F0EFEF;
-$tableThBackground: #FAFAFA;
-$menuBackground: #ffffff;
-$deleteIcon: #909399;
-$fontSize14: 14px;
-$fontSize12: 12px;
-
 .claim-container {
   .flex {
     display: flex;
@@ -102,9 +87,24 @@ $fontSize12: 12px;
   color: #00bc70;
 }
 
+/*视觉稿20年10月份版本更新*/
+@mainColor: #1890FF;
+@labelText: #000;
+@tableThText: #2c2c2c;
+@inputText: #595959;
+@inputBorder: #DEDEDE;
+@inputBackground: #FBFBFB;
+@inputDisabledBorder: #D0CFCF;
+@inputDisabledBackground: #F0EFEF;
+@tableThBackground: #FAFAFA;
+@menuBackground: #ffffff;
+@deleteIcon: #909399;
+@fontSize14: 14px;
+@fontSize12: 12px;
+
 // 左侧菜单栏
 .el-submenu [class^=el-icon-] {
-  font-size: $fontSize14;
+  font-size: @fontSize14;
 }
 .el-menu-item, .el-submenu__title {
   height: 40px;
@@ -118,34 +118,34 @@ $fontSize12: 12px;
 }
 .el-menu-item.is-active {
   background: #E6F7FF;
-  color: $mainColor;
-  border-right: 2px solid $mainColor;
+  color: @mainColor;
+  border-right: 2px solid @mainColor;
 }
 // 输入框
 .el-input__inner{
   height: 32px;
   line-height: 32px;
   padding: 0 12px;
-  background: $inputBackground;
-  border: 1px solid $inputBorder;
+  background: @inputBackground;
+  border: 1px solid @inputBorder;
   border-radius: 2px;
-  color: $inputText;
+  color: @inputText;
 }
 .el-input.is-disabled .el-input__inner {
-  background: $inputDisabledBackground;
-  border: 1px solid $inputDisabledBorder;
-  color: $inputText;
+  background: @inputDisabledBackground;
+  border: 1px solid @inputDisabledBorder;
+  color: @inputText;
 }
 .el-textarea.is-disabled .el-textarea__inner {
-  background: $inputDisabledBackground;
-  border: 1px solid $inputDisabledBorder;
-  color: $inputText;
+  background: @inputDisabledBackground;
+  border: 1px solid @inputDisabledBorder;
+  color: @inputText;
 }
 // 仅更新详情页
 #claim-settlement-filing, #batch-claim, #payin-settlement-filing {
   .el-button--mini, .el-button--mini.is-round {
     padding: 0 16px !important;
-    font-size: $fontSize14;
+    font-size: @fontSize14;
     height: 32px;
   }
   .el-form-item {
@@ -155,7 +155,7 @@ $fontSize12: 12px;
   .el-form-item__label {
     height: 46px;
     opacity: 0.85;
-    color: $labelText;
+    color: @labelText;
     text-align: right;
   }
   .el-form-item__error {
@@ -167,7 +167,7 @@ $fontSize12: 12px;
     }
   }
   .el-card {
-    color: $labelText;
+    color: @labelText;
     font-size: 16px;
     border-radius: 2px;
     border: none;
@@ -187,7 +187,7 @@ $fontSize12: 12px;
     padding: 17px 28px;
   }
   .el-card {
-    color: $labelText;
+    color: @labelText;
     font-size: 16px;
     border-radius: 2px;
     border: none;
@@ -198,21 +198,21 @@ $fontSize12: 12px;
     padding: 8px 28px;
   }
   .el-card {
-    color: $labelText;
+    color: @labelText;
     font-size: 16px;
     border-radius: 2px;
     border: none;
   }
 }
 .el-table {
-  color: $inputText;
+  color: @inputText;
 }
 .el-table--mini, .el-table--small, .el-table__expand-icon {
-  font-size: $fontSize14;
+  font-size: @fontSize14;
 }
 .el-table th{
-  background: $tableThBackground;
-  color: $tableThText;
+  background: @tableThBackground;
+  color: @tableThText;
 }
 .el-menu-item [class^=el-icon-] {
   font-size: 14px;
@@ -220,87 +220,87 @@ $fontSize12: 12px;
 // 按钮组
 .first-btn {
   height: 32px;
-  background-color: $mainColor;
-  border: 1px solid $mainColor;
-  color: $mainColor;
+  background-color: @mainColor;
+  border: 1px solid @mainColor;
+  color: @mainColor;
   padding: 0 16px;
-  font-size: $fontSize14;
+  font-size: @fontSize14;
   &:hover {
-    background-color: $mainColor;
-    color: $mainColor;
+    background-color: @mainColor;
+    color: @mainColor;
   }
   &:focus {
-    background-color: $mainColor;
-    color: $mainColor;
+    background-color: @mainColor;
+    color: @mainColor;
   }
 }
 .secondary-btn {
   height: 32px;
-  background-color: $menuBackground;
-  border: 1px solid $mainColor;
-  color: $mainColor;
+  background-color: @menuBackground;
+  border: 1px solid @mainColor;
+  color: @mainColor;
   padding: 0 16px;
-  font-size: $fontSize14;
+  font-size: @fontSize14;
   &:hover {
-    background-color: $menuBackground;
-    color: $mainColor;
+    background-color: @menuBackground;
+    color: @mainColor;
   }
   &:focus {
-    background-color: $menuBackground;
-    color: $mainColor;
+    background-color: @menuBackground;
+    color: @mainColor;
   }
 }
 .secondary-btn-info {
   height: 24px !important;
-  font-size: $fontSize12 !important;
+  font-size: @fontSize12 !important;
 }
 .third-btn {
   height: 32px;
-  background-color: $menuBackground;
-  border: 1px solid $inputBorder;
-  color: $inputText;
+  background-color: @menuBackground;
+  border: 1px solid @inputBorder;
+  color: @inputText;
   padding: 0 16px;
-  font-size: $fontSize14;
+  font-size: @fontSize14;
   &:hover {
-    background-color: $menuBackground;
-    color: $inputText;
-    border: 1px solid $inputBorder;
+    background-color: @menuBackground;
+    color: @inputText;
+    border: 1px solid @inputBorder;
   }
   &:focus {
-    background-color: $menuBackground;
-    color: $inputText;
-    border: 1px solid $inputBorder;
+    background-color: @menuBackground;
+    color: @inputText;
+    border: 1px solid @inputBorder;
   }
 }
 .delete-btn {
-  color: $deleteIcon;
+  color: @deleteIcon;
   background: none;
   border: none;
   font-size: 20px;
   cursor: pointer;
   &:hover {
-    color: $deleteIcon;
+    color: @deleteIcon;
     background: none;
     border: none;
   }
   &:focus {
-    color: $deleteIcon;
+    color: @deleteIcon;
     background: none;
     border: none;
   }
 }
 .add-btn-bill {
-  color: $inputText;
+  color: @inputText;
   background: none;
   border: none;
-  font-size: $fontSize12;
+  font-size: @fontSize12;
   &:hover {
-    color: $inputText;
+    color: @inputText;
     background: none;
     border: none;
   }
   &:focus {
-    color: $inputText;
+    color: @inputText;
     background: none;
     border: none;
   }
@@ -319,7 +319,7 @@ $fontSize12: 12px;
       width: 100%;
       padding: 20px 28px;
       .bill-content {
-        background-color: $menuBackground;
+        background-color: @menuBackground;
         height: 100%;
         // overflow: scroll;
         width: 540px;
@@ -341,10 +341,10 @@ $fontSize12: 12px;
           height: calc(100% - 120px);
         }
         .bill-warp-title {
-          color: $labelText;
+          color: @labelText;
           font-size: 16px;
           padding-left: 12px;
-          border-left: 4px solid $mainColor;
+          border-left: 4px solid @mainColor;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -361,7 +361,7 @@ $fontSize12: 12px;
           padding-right: 8px;
         }
         .empty-btn {
-          color: $inputText;
+          color: @inputText;
           font-size: 14px;
           cursor: pointer;
         }
@@ -471,7 +471,7 @@ $fontSize12: 12px;
             box-sizing: content-box;
           }
           .viewer-list > .viewer-active img, .viewer-list > .viewer-active img:hover {
-            border: 3px solid $mainColor;
+            border: 3px solid @mainColor;
           }
           .viewer-prev {
             width: 28px;

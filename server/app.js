@@ -42,17 +42,17 @@ koaEjs(app, {
 console.log(`static dir:${path.resolve(__dirname, '../public')}`)
 app.use(koaStatic(path.resolve(__dirname, '../public')));
 
-app.use(async (ctx, next) => {
-  console.log(`${ctx.request.method} ${ctx.request.url}`);
-  await next();
-});
+// app.use(async (ctx, next) => {
+//   console.log(`${ctx.request.method} ${ctx.request.url}`);
+//   await next();
+// });
 
-app.use(async (ctx, next) => {
-  const start = new Date().getTime();
-  await next();
-  const ms = new Date().getTime() - start;
-  console.log(`middware use time: ${ms}ms`);
-});
+// app.use(async (ctx, next) => {
+//   const start = new Date().getTime();
+//   await next();
+//   const ms = new Date().getTime() - start;
+//   console.log(`middware use time: ${ms}ms`);
+// });
 
 // router
 app.use(Router.routes());

@@ -1,5 +1,4 @@
 import axios from 'axios';
-const hostUrl = '127.0.0.1:8080';
 /**
  * get request
  * @authors yqw
@@ -10,9 +9,10 @@ const hostUrl = '127.0.0.1:8080';
 export const get = (req) => {
   const { url, data = null } = req;
   console.log('data:', JSON.stringify(data));
-  return axios.get(
+  console.log(`url:${url}`);
+  return axios(
     {
-      url: `${hostUrl}${url}`,
+      url,
       method: 'GET',
       params: data,
     },
@@ -29,14 +29,14 @@ export const get = (req) => {
  * @param  {[type]} url   [description]
  * @param  {[type]} query [description]
  * @return {[type]}       [description]
-//  */
+ */
 export const post = (req) => {
   const { url, data = null, headers = null } = req;
   return axios(
     {
-      url: `${hostUrl}${url}`,
-      method: 'post',
-      data,
+      url,
+      method: 'POST',
+      data: data,
       headers: headers || {
         'Content-Type': 'application/json;charset=UTF-8'
       },

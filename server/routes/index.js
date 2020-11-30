@@ -3,7 +3,7 @@ const router = KoaRouter();
 const proxy = require('../controller/proxy');
 const apiList = require('../controller/getApiList')();
 
-router.get(new RegExp('\/*'), async (ctx, next) => {
+router.get(new RegExp('\/biden\/*'), async (ctx, next) => {
   console.log(`ctx.path:${ctx.path}`)
   await ctx.render('index');
   await next();

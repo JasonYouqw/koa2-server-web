@@ -1,4 +1,3 @@
-@charset 'utf-8';
 /*公共样式*/
 a{
   text-decoration: none;
@@ -195,50 +194,37 @@ a{
 .label {
   font-weight: 700;
 }
-
-$successColor: #00BC70;
-$dangerColor: #FF5050;
-$warnColor: #EC9131;
-$mainColor: #1890FF;
-$dangerColor: #FF5050;
-$warningColor: #EC9131;
-$titleColor: #464646;
-$sTitleColor: #616161;
-$borderColor: #E6E6E6;
-$noticeColor: #F2F2F2;
-$backgroundColor: #E6F7FF;
-$successBtnHover: #1890FF;
-$menuTitle: #1890FF;
-$menuBackground: #ffffff;
-
+@successColor: #00BC70;
+@dangerColor: #FF5050;
+@warnColor: #EC9131;
 .dangerBtn {
-  background-color: $dangerColor !important;
-  border-color: $dangerColor !important;
+  background-color: @dangerColor !important;
+  border-color: @dangerColor !important;
 }
 .successBtn {
-  background-color: $successColor !important;
-  border-color: $successColor !important;
+  background-color: @successColor !important;
+  border-color: @successColor !important;
 }
 .warnBtn {
-  background-color: $warnColor !important;
-  border-color: $warnColor !important;
+  background-color: @warnColor !important;
+  border-color: @warnColor !important;
 }
 .warnScore {
   .el-badge__content {
     font-size: 14px;
-    background-color: $warnColor !important;
+    background-color: @warnColor !important;
   }
 }
 .dangerScore {
   .el-badge__content {
     font-size: 14px;
-    background-color: $dangerColor !important;
+    background-color: @dangerColor !important;
   }
 }
 .successScore {
   .el-badge__content {
     font-size: 14px;
-    background-color: $successColor !important;
+    background-color: @successColor !important;
   }
 }
 .scoreItem {
@@ -254,134 +240,159 @@ $menuBackground: #ffffff;
     display: flex !important;
   }
 }
-
+// za UI start
+// 绿白色
+// @mainColor: #00BC70;
+// @dangerColor: #FF5050;
+// @warningColor: #EC9131;
+// @titleColor: #464646;
+// @sTitleColor: #616161;
+// @borderColor: #E6E6E6;
+// @noticeColor: #F2F2F2;
+// @backgroundColor: #FAFAFA;
+// @successBtnHover: #20c980;
+// @menuTitle: #12c187;
+@mainColor: #1890FF;
+@dangerColor: #FF5050;
+@warningColor: #EC9131;
+@titleColor: #464646;
+@sTitleColor: #616161;
+@borderColor: #E6E6E6;
+@noticeColor: #F2F2F2;
+// @backgroundColor: #FAFAFA;
+// @successBtnHover: #428bca;
+// @menuTitle: #428bca;
+@backgroundColor: #E6F7FF;
+@successBtnHover: #1890FF;
+@menuTitle: #1890FF;
+@menuBackground: #ffffff;
 .el-menu {
-  background-color: $menuBackground;
+  background-color: @menuBackground;
 }
 .el-menu-item.is-active {
   background:#f1f1f1;
-  color: $mainColor;
+  color: @mainColor;
 }
 .el-submenu__title:hover {
-  background-color: $backgroundColor;
-  color: $menuTitle;
+  background-color: @backgroundColor;
+  color: @menuTitle;
 }
 .el-menu-item:hover {
-  background-color: $backgroundColor;
-  color: $menuTitle;
+  background-color: @backgroundColor;
+  color: @menuTitle;
 }
 
 .el-input__inner:hover {
-  border-color: $mainColor;
+  border-color: @mainColor;
 }
 .el-input.is-active .el-input__inner, .el-input__inner:focus {
-  border-color: $mainColor;
+  border-color: @mainColor;
 }
 // radio
 .el-radio__input.is-checked+.el-radio__label {
-  color: $mainColor;
+  color: @mainColor;
 }
 .el-radio__input.is-checked .el-radio__inner {
-  border-color: $mainColor;
-  background: $mainColor;
+  border-color: @mainColor;
+  background: @mainColor;
 }
 .el-radio-button__orig-radio:checked+.el-radio-button__inner {
-  background-color: $mainColor;
-  border-color: $mainColor;
+  background-color: @mainColor;
+  border-color: @mainColor;
 }
 .el-radio-button__inner:hover {
-  color: $mainColor;
+  color: @mainColor;
 }
 .el-radio.is-bordered.is-checked {
-  border-color: $mainColor;
+  border-color: @mainColor;
 }
 // tag
 .el-tag--dark.el-tag--success {
-  background-color: $mainColor;
-  border-color: $mainColor;
+  background-color: @mainColor;
+  border-color: @mainColor;
 }
 .el-tag--dark.el-tag--danger {
-  background-color: $dangerColor;
-  border-color: $dangerColor;
+  background-color: @dangerColor;
+  border-color: @dangerColor;
 }
 // pagination
 .el-pager li.active {
-  color: $mainColor;
+  color: @mainColor;
 }
 .el-pager li:hover {
-  color: $mainColor;
+  color: @mainColor;
 }
 .el-pagination.is-background .el-pager li:not(.disabled).active {
-  border-color: $mainColor;
-  background: $mainColor;
+  border-color: @mainColor;
+  background: @mainColor;
 }
 .el-pagination.is-background .el-pager li:not(.disabled):hover {
-  background-color: $mainColor;
+  background-color: @mainColor;
   color: #fff;
 }
 .el-pagination__sizes .el-input .el-input__inner:hover {
-  border-color: $mainColor;
+  border-color: @mainColor;
 }
 // loading
 .el-loading-spinner .el-loading-text {
-  color: $mainColor;
+  color: @mainColor;
 }
 .el-loading-spinner i {
-  color: $mainColor;
+  color: @mainColor;
 }
 .el-loading-spinner .path {
-  stroke: $mainColor;
+  stroke: @mainColor;
 }
 // button
 .el-button--success.is-plain:focus, .el-button--success.is-plain:hover {
   &:focus,&:hover {
-    color: $mainColor;
-    border-color: $mainColor;
+    color: @mainColor;
+    border-color: @mainColor;
     background: #fff;
   }
 }
 .el-button--default {
   &:focus,&:hover {
-    color: $mainColor;
-    border-color: $mainColor;
+    color: @mainColor;
+    border-color: @mainColor;
     background: #fff;
   }
 }
 .el-button--primary {
   color: #FFF;
-  background-color: $mainColor;
-  border-color: $mainColor;
+  background-color: @mainColor;
+  border-color: @mainColor;
   &:hover, &:focus {
     color: #FFF;
-    background-color: $successBtnHover;
-    border-color: $successBtnHover;
+    background-color: @successBtnHover;
+    border-color: @successBtnHover;
   }
 }
 .el-button--primary.is-plain {
-  color: $mainColor;
+  color: @mainColor;
   background: #fff;
-  border-color: $mainColor;
+  border-color: @mainColor;
   &:focus,&:hover {
-    background: $mainColor;
-    border-color: $mainColor;
+    background: @mainColor;
+    border-color: @mainColor;
     color: #fff;
   }
 }
 .el-button--success {
-  background-color: $mainColor;
-  border-color: $mainColor;
+  background-color: @mainColor;
+  border-color: @mainColor;
   color: #fff;
   &:hover {
-    background-color: $successBtnHover;
-    border-color: $successBtnHover;
+    background-color: @successBtnHover;
+    border-color: @successBtnHover;
   }
 }
 .el-button--danger {
-  background-color: $dangerColor;
-  border-color: $dangerColor;
+  background-color: @dangerColor;
+  border-color: @dangerColor;
 }
 .el-textarea__inner:hover {
-  border-color: $mainColor;
+  border-color: @mainColor;
 }
 .el-button--success.is-plain {
   color: #606266;
@@ -389,8 +400,8 @@ $menuBackground: #ffffff;
   border-color: #dcdfe6;
   &:focus,&:hover {
     background: #fff;
-    border-color: $mainColor;
-    color: $mainColor;
+    border-color: @mainColor;
+    color: @mainColor;
   }
 }
 .el-button--success.is-disabled, .el-button--success.is-disabled:active, .el-button--success.is-disabled:focus, .el-button--success.is-disabled:hover {
@@ -398,23 +409,23 @@ $menuBackground: #ffffff;
   border-color: #66d7a9;
 }
 .el-button--text {
-  color: $mainColor;
+  color: @mainColor;
   .is-active {
-    color: $mainColor;
-    border-color: $mainColor;
+    color: @mainColor;
+    border-color: @mainColor;
   }
   &:active,&:focus,&:hover {
-    color: $mainColor;
-    border-color: $mainColor;
+    color: @mainColor;
+    border-color: @mainColor;
   }
   .is-plain {
     &:active,&:focus,&:hover {
-      color: $mainColor;
-      border-color: $mainColor;
+      color: @mainColor;
+      border-color: @mainColor;
     }
     .is-active {
-      color: $mainColor;
-      border-color: $mainColor;
+      color: @mainColor;
+      border-color: @mainColor;
     }
   }
 }
@@ -425,7 +436,7 @@ $menuBackground: #ffffff;
 }
 .el-picker-panel__link-btn {
   color: #fff;
-  background-color: $mainColor;
+  background-color: @mainColor;
 }
 .el-picker-panel__link-btn.is-plain:focus, .el-picker-panel__link-btn.is-plain:hover {
   color: #fff;
@@ -434,86 +445,86 @@ $menuBackground: #ffffff;
 }
 // date
 .el-date-table td.end-date span, .el-date-table td.start-date span {
-  background-color: $mainColor;
+  background-color: @mainColor;
 }
 .el-date-table td.today span {
-  color: $mainColor;
+  color: @mainColor;
 }
 .el-picker-panel__shortcut:hover {
-  color: $mainColor;
+  color: @mainColor;
 }
 .el-date-table td.available:hover {
-  color: $mainColor;
+  color: @mainColor;
 }
 // select
 .el-select .el-input.is-focus .el-input__inner {
-  border-color: $mainColor;
+  border-color: @mainColor;
 }
 .el-select-dropdown__item.selected {
   background-color: #F1FCF8;
-  color: $mainColor;
+  color: @mainColor;
 }
 .el-select-dropdown__item.hover, .el-select-dropdown__item:hover {
   background-color: #FAFAFA;
 }
 .el-select .el-input__inner {
   &:hover {
-    border-color: $mainColor;
+    border-color: @mainColor;
   }
   &:focus {
-    border-color: $mainColor;
+    border-color: @mainColor;
   }
 }
 .el-select-dropdown.is-multiple .el-select-dropdown__item.selected {
-  color: $mainColor;
+  color: @mainColor;
   background-color: #F1FCF8;
 }
 // swtich
 .el-switch.is-checked .el-switch__core {
-  background-color: $mainColor;
-  border-color: $mainColor;
+  background-color: @mainColor;
+  border-color: @mainColor;
 }
 // checkbox
 .el-checkbox__inner:hover {
-  border-color: $mainColor;
+  border-color: @mainColor;
 }
 .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
-  background-color: $mainColor;
-  border-color: $mainColor;
+  background-color: @mainColor;
+  border-color: @mainColor;
 }
 .el-checkbox__input.is-focus .el-checkbox__inner {
-  border-color: $mainColor;
+  border-color: @mainColor;
 }
 .el-checkbox__input.is-checked+.el-checkbox__label {
-  color: $mainColor;
+  color: @mainColor;
 }
 .el-transfer-panel__item:hover {
-  color: $mainColor;
+  color: @mainColor;
 }
 // tag
 .el-tag {
-  color: $mainColor;
+  color: @mainColor;
   background-color: #F1FCF8;
 }
 // tab
 .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active {
-  color: $mainColor;
+  color: @mainColor;
 }
 .el-tabs__item.is-active {
-  color: $mainColor;
+  color: @mainColor;
 }
 .el-tabs--border-card>.el-tabs__header .el-tabs__item:not(.is-disabled):hover {
-  color: $mainColor;
+  color: @mainColor;
 }
 .el-tabs__active-bar {
-  background-color: $mainColor;
+  background-color: @mainColor;
 }
 .el-tabs__item:hover {
-  color: $mainColor;
+  color: @mainColor;
 }
 // dialog
 .el-dialog__headerbtn:focus .el-dialog__close, .el-dialog__headerbtn:hover .el-dialog__close {
-  color: $mainColor;
+  color: @mainColor;
 }
 .el-table {
   .el-button.is-disabled, .el-button.is-disabled:focus, .el-button.is-disabled:hover {
@@ -522,60 +533,60 @@ $menuBackground: #ffffff;
 }
 // upload
 .el-upload-dragger .el-upload__text em {
-  color: $mainColor;
+  color: @mainColor;
 }
 .el-upload-dragger:hover {
-  border-color: $mainColor;
+  border-color: @mainColor;
 }
 .el-upload--picture-card:hover, .el-upload:focus {
-  border-color: $mainColor;
-  color: $mainColor;
+  border-color: @mainColor;
+  color: @mainColor;
 }
 // slider
 .el-slider__bar {
-  background-color: $mainColor;
+  background-color: @mainColor;
 }
 .el-slider__button {
-  border: 2px solid $mainColor;
+  border: 2px solid @mainColor;
 }
 // progress-bar
 .el-progress-bar__inner {
-  background-color: $mainColor;
+  background-color: @mainColor;
 }
 // step
 .el-step__head.is-finish {
-  color: $mainColor;
-  border-color: $mainColor;
+  color: @mainColor;
+  border-color: @mainColor;
 }
 .el-step__title.is-finish {
-  color: $mainColor;
+  color: @mainColor;
 }
 .table-btn {
-  color: $mainColor;
+  color: @mainColor;
   background: none;
   border: none;
   &:hover {
-    color: $mainColor;
+    color: @mainColor;
     background: none;
     border: none;
   }
   &:focus {
-    color: $mainColor;
+    color: @mainColor;
     background: none;
     border: none;
   }
 }
 .table-btn-delete {
-  color: $dangerColor;
+  color: @dangerColor;
   background: none;
   border: none;
   &:hover {
-    color: $dangerColor;
+    color: @dangerColor;
     background: none;
     border: none;
   }
   &:focus {
-    color: $dangerColor;
+    color: @dangerColor;
     background: none;
     border: none;
   }
@@ -630,10 +641,10 @@ $menuBackground: #ffffff;
   }
 }
 .red {
-  color: $dangerColor;
+  color: @dangerColor;
 }
 .green {
-  color: $mainColor;
+  color: @mainColor;
 }
 .blue-btn {
   color: #409eff;
@@ -643,21 +654,21 @@ $menuBackground: #ffffff;
   }
 }
 .yellow-btn {
-  color: $warningColor;
+  color: @warningColor;
   &:hover {
-    color: $warningColor;
-    border-color: $warningColor;
+    color: @warningColor;
+    border-color: @warningColor;
   }
 }
 .red-btn {
-  color: $dangerColor;
+  color: @dangerColor;
   &:hover {
-    color: $dangerColor;
-    border-color: $dangerColor;
+    color: @dangerColor;
+    border-color: @dangerColor;
   }
 }
 .url {
-  color: $mainColor;
+  color: @mainColor;
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -753,7 +764,7 @@ $menuBackground: #ffffff;
 }
 .el-collapse-item__header{
   font-size: 18px;
-  color: $titleColor;
+  color: @titleColor;
   font-weight: 700;
   padding-left: 10px;
 }
@@ -781,11 +792,11 @@ $menuBackground: #ffffff;
 #bill-file-upload {
   .el-card__body {
     overflow-y: scroll;
-    height: calc(100% - 90px);
+    height: calc(~"100% - 90px");
   }
 }
 .skip-id {
-  color: $mainColor;
+  color: @mainColor;
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -793,9 +804,9 @@ $menuBackground: #ffffff;
 }
 /*表格样式*/
 .el-table th{
-  background: $noticeColor;
+  background: @noticeColor;
   font-size: 14px;
-  color: $titleColor;
+  color: @titleColor;
 }
 .el-button{
   padding: 10px 20px;
@@ -814,10 +825,10 @@ $menuBackground: #ffffff;
   line-height: 35px;
 }
 .success{
-  color: $mainColor;
+  color: @mainColor;
 }
 .danger {
-  color: $dangerColor;
+  color: @dangerColor;
 }
 .el-table{
   .el-button{
@@ -825,62 +836,62 @@ $menuBackground: #ffffff;
   }
 }
 .delete-no-border {
-  color: $dangerColor;
+  color: @dangerColor;
   border: none;
   background-color: none;
   .is-active {
-    color: $dangerColor;
+    color: @dangerColor;
     border: none;
     background-color: none;
   }
   &:hover, &:focus, &:active{
-    color: $dangerColor;
+    color: @dangerColor;
     border: none;
     background-color: none;
   }
 }
 .add-no-border {
-  color: $mainColor;
+  color: @mainColor;
   border: none;
   background: none;
   .is-active {
-    color: $mainColor;
+    color: @mainColor;
     border: none;
     background: none;
   }
   &:hover, &:focus, &:active{
-    color: $mainColor;
+    color: @mainColor;
     border: none;
     background: none;
   }
 }
 .add-btn {
-  color: $mainColor;
-  border-color: $mainColor;
+  color: @mainColor;
+  border-color: @mainColor;
   .is-active {
-    color: $mainColor;
-    border-color: $mainColor;
+    color: @mainColor;
+    border-color: @mainColor;
   }
   &:hover, &:focus, &:active{
-    color: $mainColor;
-    border-color: $mainColor;
+    color: @mainColor;
+    border-color: @mainColor;
   }
 }
 .delete{
-  color: $dangerColor;
+  color: @dangerColor;
   .is-active {
-    color: $dangerColor;
-    border-color: $dangerColor;
+    color: @dangerColor;
+    border-color: @dangerColor;
   }
   &:hover, &:focus, &:active{
-    color: $dangerColor;
-    border-color: $dangerColor;
+    color: @dangerColor;
+    border-color: @dangerColor;
   }
 }
 .edit {
-  color: $warningColor;
+  color: @warningColor;
   &:hover{
-    color: $warningColor;
+    color: @warningColor;
   }
 }
 .add {
@@ -940,7 +951,7 @@ $menuBackground: #ffffff;
   transition: border-bottom-color 0.3s;
   outline: 0;
   font-size: 18px;
-  color: $titleColor;
+  color: @titleColor;
   font-weight: 700;
 }
 .detail-title {
@@ -968,7 +979,7 @@ $menuBackground: #ffffff;
   transition: border-bottom-color 0.3s;
   outline: 0;
   font-size: 18px;
-  color: $titleColor;
+  color: @titleColor;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -978,7 +989,7 @@ $menuBackground: #ffffff;
     line-height: 40px;
     outline: 0;
     font-size: 18px;
-    color: $titleColor;
+    color: @titleColor;
     font-weight: 700;
     margin-bottom: 10px;
   }
@@ -987,7 +998,7 @@ $menuBackground: #ffffff;
   .el-dialog{
     height: 650px;
     .el-dialog__body{
-      height: calc(100% - 130px);
+      height: calc(~"100% - 130px");
       overflow-y: scroll;
     }
   }
@@ -996,7 +1007,7 @@ $menuBackground: #ffffff;
   .el-dialog{
     height: 350px;
     .el-dialog__body{
-      height: calc(100% - 130px);
+      height: calc(~"100% - 130px");
       overflow-y: scroll;
     }
   }
@@ -1025,7 +1036,6 @@ $menuBackground: #ffffff;
 }
 /*表格中状态，进行中，成功*/
 @keyframes antStatusProcessing{0%{transform:scale(.8);opacity:.5}to{transform:scale(2.4);opacity:0}}
-
 .badge {
   font-family: Chinese Quote,-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 14px;
@@ -1063,7 +1073,7 @@ $menuBackground: #ffffff;
   top: -1px;
 }
 .status-processing {
-  background-color: $mainColor;
+  background-color: @mainColor;
   position: relative;
   &::after {
     position: absolute;
@@ -1072,7 +1082,7 @@ $menuBackground: #ffffff;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 1px solid $mainColor;
+    border: 1px solid @mainColor;
     content: "";
     animation: antStatusProcessing 1.2s ease-in-out infinite;
     box-sizing: border-box;
@@ -1266,15 +1276,15 @@ $menuBackground: #ffffff;
     height: 30px;
   }
   .el-table th {
-    background: $backgroundColor;
+    background: @backgroundColor;
   }
 }
 .basic-detail {
   .el-table th {
-    background: $backgroundColor;
+    background: @backgroundColor;
   }
   .table-url {
-    color: $mainColor;
+    color: @mainColor;
     width: 100%;
     height: 100%;
     margin: 0 auto;
@@ -1305,7 +1315,7 @@ $menuBackground: #ffffff;
         .el-transfer-panel__body{
           height: 100%;
           .el-checkbox-group{
-            height: calc(100% - 50px)
+            height: calc(~"100% - 50px")
           }
         }
         .transfer-option{
@@ -1343,7 +1353,7 @@ $menuBackground: #ffffff;
         padding: 0 10px;
       }
       &>div:last-child{
-        width: calc(100% - 550px)
+        width: calc(~"100% - 550px")
       }
     }
   }
@@ -1386,7 +1396,7 @@ $menuBackground: #ffffff;
         .el-transfer-panel__body{
           height: 100%;
           .el-checkbox-group{
-            height: calc(100% - 50px)
+            height: calc(~"100% - 50px")
           }
         }
         .el-transfer-panel__item.el-checkbox {
@@ -1425,7 +1435,7 @@ $menuBackground: #ffffff;
     height: 70%;
     .el-dialog__body{
       padding: 10px 60px 30px 60px;
-      height: calc(100% - 130px);
+      height: calc(~"100% - 130px");
       overflow-y: scroll;
       .transfer-info{
         text-align: center;
@@ -1440,7 +1450,7 @@ $menuBackground: #ffffff;
             .el-transfer-panel__body{
               height: 100%;
               .el-checkbox-group{
-                height: calc(100% - 50px)
+                height: calc(~"100% - 50px")
               }
             }
             .el-transfer-panel__item.el-checkbox:first-child{
@@ -1488,7 +1498,7 @@ $menuBackground: #ffffff;
     height: 60%;
     .el-dialog__body{
       padding: 10px 60px 30px 60px;
-      height: calc(100% - 130px);
+      height: calc(~"100% - 130px");
       overflow-y: scroll;
     }
   }
@@ -1512,7 +1522,7 @@ $menuBackground: #ffffff;
         padding-right: 8px;
       }
       .btn-delete{
-        color: $dangerColor;
+        color: @dangerColor;
         border: none;
       }
     }
@@ -1535,7 +1545,7 @@ $menuBackground: #ffffff;
 }
 #plan-price-alipay-applet-config {
   .el-table th {
-    background: $backgroundColor;
+    background: @backgroundColor;
   }
 }
 #add-platform {

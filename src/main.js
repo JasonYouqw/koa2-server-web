@@ -1,16 +1,18 @@
 import Vue from 'vue';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-// import '@/assets/scss/index.scss';
+import './assets/icon/iconfont.css';
+import './assets/less/common.less';
+import './assets/less/base.less';
 import router from './routes/index';
 // import store from './stores/index';
-import * as axios from './utils/axios';
+import axios from './utils/axios';
 
 import App from './App.vue';
 console.log('main .js')
 Vue.use(ElementUI);
 
-Vue.prototype.axios = axios;
+Vue.prototype.$axios = axios;
 
 router.beforeEach((to, form , next) => {
   console.log(`to.path:${to.path}`);
